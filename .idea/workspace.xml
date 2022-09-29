@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3635add-ac02-4976-8466-0fd82b58678f" name="Changes" comment="Main.kt 1">
+    <list default="true" id="c3635add-ac02-4976-8466-0fd82b58678f" name="Changes" comment="Server request + test.json">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/WikiRequest/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/WikiRequest/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/WikiRequest/WikiRequester.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/WikiRequest/WikiRequester.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +23,7 @@
       <list>
         <option value="Kotlin File" />
         <option value="Kotlin Class" />
+        <option value="Kotlin Data Class" />
       </list>
     </option>
   </component>
@@ -62,7 +62,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664469460251</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Server request + test.json">
+      <created>1664476117026</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1664476117026</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -78,6 +85,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Main.kt 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Main.kt 1" />
+    <MESSAGE value="Server request + test.json" />
+    <option name="LAST_COMMIT_MESSAGE" value="Server request + test.json" />
   </component>
 </project>
