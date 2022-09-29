@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3635add-ac02-4976-8466-0fd82b58678f" name="Changes" comment="Server request + test.json">
+    <list default="true" id="c3635add-ac02-4976-8466-0fd82b58678f" name="Changes" comment="JsonComponents">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/WikiRequest/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/WikiRequest/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/WikiRequest/ReaderFromConsole.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/WikiRequest/ReaderFromConsole.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/WikiRequest/WikiRequester.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/WikiRequest/WikiRequester.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,6 +48,20 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="WikiRequest.MainKt" />
+      <module name="KotlinPractice.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Kotlin.MainKt" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -69,7 +85,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664476117026</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="JsonComponents">
+      <created>1664477688958</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1664477688958</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -86,6 +109,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Main.kt 1" />
     <MESSAGE value="Server request + test.json" />
-    <option name="LAST_COMMIT_MESSAGE" value="Server request + test.json" />
+    <MESSAGE value="JsonComponents" />
+    <option name="LAST_COMMIT_MESSAGE" value="JsonComponents" />
   </component>
 </project>

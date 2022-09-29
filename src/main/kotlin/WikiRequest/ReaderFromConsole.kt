@@ -2,6 +2,7 @@ package WikiRequest
 
 import java.net.HttpURLConnection
 import java.net.URL
+import java.net.URLEncoder
 
 class ReaderFromConsole {
     private var userRequest: String = ""
@@ -11,7 +12,7 @@ class ReaderFromConsole {
             userRequest = readln()
         }
         val connect =
-            URL("https://ru.wikipedia.org/w/api.php?action=query&list=search&utf8=&format=json&srsearch=$userRequest").openConnection() as HttpURLConnection
+            URL("https://ru.wikipedia.org/w/api.php?action=query&list=search&utf8=&format=json&srsearch=${URLEncoder.encode(userRequest)}").openConnection() as HttpURLConnection
         return connect.inputStream.bufferedReader().readText()
     }
 }
