@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3635add-ac02-4976-8466-0fd82b58678f" name="Changes" comment="JsonComponents">
+    <list default="true" id="c3635add-ac02-4976-8466-0fd82b58678f" name="Changes" comment="CreateList">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/WikiRequest/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/WikiRequest/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/WikiRequest/ReaderFromConsole.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/WikiRequest/ReaderFromConsole.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/WikiRequest/WikiRequester.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/WikiRequest/WikiRequester.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -92,7 +90,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664477688958</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="CreateList">
+      <created>1664479996765</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1664479996765</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -110,6 +115,7 @@
     <MESSAGE value="Main.kt 1" />
     <MESSAGE value="Server request + test.json" />
     <MESSAGE value="JsonComponents" />
-    <option name="LAST_COMMIT_MESSAGE" value="JsonComponents" />
+    <MESSAGE value="CreateList" />
+    <option name="LAST_COMMIT_MESSAGE" value="CreateList" />
   </component>
 </project>
