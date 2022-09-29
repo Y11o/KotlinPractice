@@ -1,31 +1,31 @@
-package WikiRequest
+package wikiRequest
 
 data class JsonComponents(
-    val batchComplete: String,
+    val batchcomplete: String,
     val cContinue: Continue,
     val query: Query
 )
 
 data class Continue(
-    val srOffset: Int,
+    val sroffset: Int,
     val cContinue: String
 )
 
 data class Query(
-    val searchInfo: SearchInfo,
+    val searchinfo: SearchInfo,
     val search: List<Search>
 )
 
 data class SearchInfo(
-    val totalHits: Int
+    val totalhits: Int
 )
 
 data class Search(
     val ns: Int,
     val title: String,
-    val pageId: Int,
+    val pageid: Int,
     val size: Int,
-    val wordCount: Int,
+    val wordcount: Int,
     val snippet: String,
     val timestamp: String
 )

@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3635add-ac02-4976-8466-0fd82b58678f" name="Changes" comment="CreateList">
+    <list default="true" id="c3635add-ac02-4976-8466-0fd82b58678f" name="Changes" comment="Browse">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/WikiRequest/WikiRequester.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/WikiRequest/WikiRequester.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/WikiRequest/JsonComponents.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/wikiRequest/JsonComponents.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/WikiRequest/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/wikiRequest/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/WikiRequest/ReaderFromConsole.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/wikiRequest/ReaderFromConsole.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/WikiRequest/WikiRequester.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/wikiRequest/WikiRequester.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +36,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectId" id="2FRwAkTeiN3lvUnZaTETiPVeKtF" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -48,7 +54,7 @@
 }]]></component>
   <component name="RunManager">
     <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="WikiRequest.MainKt" />
+      <option name="MAIN_CLASS_NAME" value="wikiRequest.MainKt" />
       <module name="KotlinPractice.main" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -97,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664479996765</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Browse">
+      <created>1664481194753</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1664481194753</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -116,6 +129,7 @@
     <MESSAGE value="Server request + test.json" />
     <MESSAGE value="JsonComponents" />
     <MESSAGE value="CreateList" />
-    <option name="LAST_COMMIT_MESSAGE" value="CreateList" />
+    <MESSAGE value="Browse" />
+    <option name="LAST_COMMIT_MESSAGE" value="Browse" />
   </component>
 </project>

@@ -1,4 +1,4 @@
-package WikiRequest
+package wikiRequest
 
 import com.google.gson.Gson
 import java.awt.Desktop
@@ -20,7 +20,7 @@ class WikiRequester(
         println("Input the number of request, you want to open in browser...")
         val userAnswer: Int = readln().toInt()
         if (userAnswer > 0 && userAnswer <= searchResults.size){
-            Desktop.getDesktop().browse(URI("https://ru.wikipedia.org/w/index.php?curid=${searchResults[userAnswer - 1].pageId}"))
+            Desktop.getDesktop().browse(URI("https://ru.wikipedia.org/w/index.php?curid=${searchResults[userAnswer - 1].pageid}"))
         }else{
             println("Incorrect input.")
             browse()
