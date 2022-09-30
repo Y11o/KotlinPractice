@@ -5,5 +5,4 @@ fun main() {
     val wikiReq = WikiRequester(request.getRequest())
     wikiReq.createListOfSearches()
     wikiReq.browse()
-
 }

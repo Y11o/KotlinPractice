@@ -12,7 +12,14 @@ class ReaderFromConsole {
             userRequest = readln()
         }
         val connect =
-            URL("https://ru.wikipedia.org/w/api.php?action=query&list=search&utf8=&format=json&srsearch=${URLEncoder.encode(userRequest, "UTF-8")}").openConnection() as HttpURLConnection
+            URL(
+                "https://ru.wikipedia.org/w/api.php?action=query&list=search&utf8=&format=json&srsearch=${
+                    URLEncoder.encode(
+                        userRequest,
+                        "UTF-8"
+                    )
+                }"
+            ).openConnection() as HttpURLConnection
         return connect.inputStream.bufferedReader().readText()
     }
 }

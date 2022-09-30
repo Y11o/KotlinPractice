@@ -1,31 +1,41 @@
 package wikiRequest
 
+import com.google.gson.annotations.SerializedName
+
 data class JsonComponents(
-    val batchcomplete: String,
+    @SerializedName("batchcomplete")
+    val batchComplete: String,
+    @SerializedName("continue")
     val cContinue: Continue,
     val query: Query
 )
 
 data class Continue(
-    val sroffset: Int,
+    @SerializedName("sroffset")
+    val srOffset: Int,
+    @SerializedName("continue")
     val cContinue: String
 )
 
 data class Query(
-    val searchinfo: SearchInfo,
+    @SerializedName("searchinfo")
+    val searchInfo: SearchInfo,
     val search: List<Search>
 )
 
 data class SearchInfo(
-    val totalhits: Int
+    @SerializedName("totalhits")
+    val totalHits: Int
 )
 
 data class Search(
     val ns: Int,
     val title: String,
-    val pageid: Int,
+    @SerializedName("pageid")
+    val pageId: Int,
     val size: Int,
-    val wordcount: Int,
+    @SerializedName("wordcount")
+    val wordCount: Int,
     val snippet: String,
     val timestamp: String
 )

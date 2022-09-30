@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3635add-ac02-4976-8466-0fd82b58678f" name="Changes" comment="Browse-1">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/wikiRequest/JsonComponents.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/wikiRequest/JsonComponents.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/wikiRequest/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/wikiRequest/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/wikiRequest/WikiRequester.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/wikiRequest/WikiRequester.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
