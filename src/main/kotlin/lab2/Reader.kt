@@ -73,34 +73,31 @@ class Reader {
         printStatistic()
     }
 
-    private fun readXML(path:String){
+    private fun readXML(path: String) {
         val startTime = System.currentTimeMillis()
 
-        val builderFactory: DocumentBuilderFactory = DocumentBuilderFactory.newInstance()
-        val docBuilder: DocumentBuilder = builderFactory.newDocumentBuilder()
-        val doc: Document = docBuilder.parse(File(path))
-        val elements: NodeList = doc.documentElement.getElementsByTagName("item")
+        val builderFactory = DocumentBuilderFactory.newInstance()
+        val docBuilder = builderFactory.newDocumentBuilder()
+        val doc = docBuilder.parse(File(path))
+        val elements = doc.getElementsByTagName("item")
 
-        for (index in 0 until elements.length){
-            val element = elements.item(index)
-            val attributes = element.attributes
-            val newGuide = Guide(
-                attributes.getNamedItem("city").nodeValue,
-                attributes.getNamedItem("street").nodeValue,
-                attributes.getNamedItem("house").nodeValue.toInt(),
-                attributes.getNamedItem("floor").nodeValue.toInt()
-            )
-
-            if (hashMap.isEmpty() || !hashMap.containsKey(newGuide)) //если не повторялась запись, то 1
-                hashMap[newGuide] = 1
-            else {
-                hashMap[newGuide] = hashMap[newGuide]!! + 1 //если не NULL, то добавляем единичку
+        for (index in 0 until elements.length) {
+            if (elements.item(0).nodeType == Node.ELEMENT_NODE) {
+                val attributes: NamedNodeMap = elements.item(index).attributes
+                val newGuide = Guide(
+                    attributes.getNamedItem("city").nodeValue,
+                    attributes.getNamedItem("street").nodeValue,
+                    attributes.getNamedItem("house").nodeValue.toInt(),
+                    attributes.getNamedItem("floor").nodeValue.toInt()
+                )
+                if (hashMap.isEmpty() || !hashMap.containsKey(newGuide)) //если не повторялась запись, то 1
+                    hashMap[newGuide] = 1
+                else {
+                    hashMap[newGuide] = hashMap[newGuide]!! + 1 //если не 0, то добавляем единичку
+                }
+                if (!cities.contains(newGuide.city)) cities.add(newGuide.city)
             }
-
-            if (!cities.contains(newGuide.city)) cities.add(newGuide.city)
-
         }
-
         val runTime = System.currentTimeMillis() - startTime
         println("\nRuntime is $runTime milliseconds\n")
 
