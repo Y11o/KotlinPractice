@@ -27,7 +27,11 @@ class Reader {
                     readCSV(path)
                 else if (path.lowercase().endsWith(".xml"))
                     readXML(path)
-                else throw Exception("Path entered incorrectly")
+                else{
+                    println("Path entered incorrectly")
+                    Reader().readFromConsole()
+                    exit = true
+                }
             }
         }
     }
