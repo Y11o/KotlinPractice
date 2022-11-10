@@ -1,16 +1,12 @@
 package lab2
 
-import org.apache.commons.csv.CSVFormat
 import org.apache.commons.csv.CSVParser
-import org.w3c.dom.Document
+import org.apache.commons.csv.CSVFormat
 import org.w3c.dom.NamedNodeMap
 import org.w3c.dom.Node
-import org.w3c.dom.NodeList
 import java.io.File
 import java.io.FileInputStream
-import javax.xml.parsers.DocumentBuilder
 import javax.xml.parsers.DocumentBuilderFactory
-import kotlin.collections.containsValue as containsValue1
 
 
 class Reader {
