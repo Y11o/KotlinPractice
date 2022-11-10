@@ -2,15 +2,20 @@ package lab2
 
 import org.apache.commons.csv.CSVFormat
 import org.apache.commons.csv.CSVParser
+import org.w3c.dom.Document
 import org.w3c.dom.NamedNodeMap
 import org.w3c.dom.Node
+import org.w3c.dom.NodeList
 import java.io.File
 import java.io.FileInputStream
+import javax.xml.parsers.DocumentBuilder
 import javax.xml.parsers.DocumentBuilderFactory
+import kotlin.collections.containsValue as containsValue1
 
 
 class Reader {
-   var hashMap: HashMap<Guide, Int> = hashMapOf() //карта, которая содержит адрес и количество повторений этого адреса
+    var hashMap: HashMap<Guide, Int> = hashMapOf() //карта, которая содержит адрес и количество повторений этого адреса
+    val cities = mutableListOf<String>()
 
     fun readFromConsole(){
         var exit = false
@@ -37,12 +42,12 @@ class Reader {
         val inputStream = FileInputStream(path)
         val reader = inputStream.bufferedReader()
         val csvParser = CSVParser(reader, CSVFormat.DEFAULT
-         //   .withDelimiter(';')
-         //   .withQuote('"')
-         //   .withRecordSeparator("\r\n")
-         //   .withFirstRecordAsHeader()
-         //   .withIgnoreHeaderCase()
-         //   .withTrim()
+            .withDelimiter(';')
+            .withQuote('"')
+            .withRecordSeparator("\r\n")
+            .withFirstRecordAsHeader()
+            .withIgnoreHeaderCase()
+            .withTrim()
         )
 
         for (csvRecord in csvParser) {
@@ -55,9 +60,13 @@ class Reader {
             if (hashMap.isEmpty() || !hashMap.containsKey(newGuide)) //если не повторялась запись, то 1
                 hashMap[newGuide] = 1
             else {
-                hashMap[newGuide] = hashMap[newGuide]!! + 1 //если не 0, то добавляем единичку
+                hashMap[newGuide] = hashMap[newGuide]!! + 1 //если не NULL, то добавляем единичку
             }
+
+            if (!cities.contains(newGuide.city)) cities.add(newGuide.city)
+
         }
+
         val runTime = System.currentTimeMillis() - startTime
         println("\nRuntime is $runTime milliseconds\n")
 
@@ -67,68 +76,64 @@ class Reader {
     private fun readXML(path:String){
         val startTime = System.currentTimeMillis()
 
-        val builderFactory = DocumentBuilderFactory.newInstance()
-        val docBuilder = builderFactory.newDocumentBuilder()
-        val doc = docBuilder.parse(File(path))
-        val elements = doc.getElementsByTagName("address")
+        val builderFactory: DocumentBuilderFactory = DocumentBuilderFactory.newInstance()
+        val docBuilder: DocumentBuilder = builderFactory.newDocumentBuilder()
+        val doc: Document = docBuilder.parse(File(path))
+        val elements: NodeList = doc.documentElement.getElementsByTagName("item")
 
         for (index in 0 until elements.length){
-            if(elements.item(0).nodeType == Node.ELEMENT_NODE){
-                val attributes: NamedNodeMap = elements.item(index).attributes
-                val newGuide = Guide(
-                    attributes.getNamedItem("city").nodeValue,
-                    attributes.getNamedItem("street").nodeValue,
-                    attributes.getNamedItem("house").nodeValue.toInt(),
-                    attributes.getNamedItem("floor").nodeValue.toInt()
-                )
+            val element = elements.item(index)
+            val attributes = element.attributes
+            val newGuide = Guide(
+                attributes.getNamedItem("city").nodeValue,
+                attributes.getNamedItem("street").nodeValue,
+                attributes.getNamedItem("house").nodeValue.toInt(),
+                attributes.getNamedItem("floor").nodeValue.toInt()
+            )
+
+            if (hashMap.isEmpty() || !hashMap.containsKey(newGuide)) //если не повторялась запись, то 1
+                hashMap[newGuide] = 1
+            else {
+                hashMap[newGuide] = hashMap[newGuide]!! + 1 //если не NULL, то добавляем единичку
             }
+
+            if (!cities.contains(newGuide.city)) cities.add(newGuide.city)
+
         }
+
         val runTime = System.currentTimeMillis() - startTime
         println("\nRuntime is $runTime milliseconds\n")
 
         printStatistic()
     }
 
-    fun printStatistic (){
+    private fun printStatistic (){
         //дубликаты
         hashMap.forEach{
-            println("${it.key} : кол-во повторов - ${it.value}")
+            if (it.value > 1)
+                println("${it.key} : number of repetitions - ${it.value}")
+        }
+        println()
+
+        //вывод 1..5 этажных домов каждого города
+        cities.sort()
+        var cntHouses: Int
+        for (city in cities) {
+            val count = hashMap.filterKeys { city == it.city }
+            for (indexFloor in 1..5) {
+                cntHouses = count.filterKeys { indexFloor == it.floor }.count()
+                if (cntHouses!=0)
+                    println("$city has $cntHouses $indexFloor-storey houses")
+            }
         }
 
-        //сколько в каждом городе домов n-го кол-ва этажей (1-5)
-        val mapCity: HashMap<String, Pair<Int,Int>> = hashMapOf() //карта город - количество домов 1-5 этажей
-        for ((key,value) in hashMap){
-            if (!mapCity.containsKey(key.city)){
-                mapCity[key.city] = Pair(key.floor, 1)
-            }
-            else{
-                var count = 0
-                when (key.floor){
-                    1 -> {
-                        count = mapCity.getValue(key.city).second + 1
-                        mapCity[key.city] = Pair(1, count)
-                    }
-                    2 -> {
-                        count = mapCity.getValue(key.city).second + 1
-                        mapCity[key.city] = Pair(2, count)
-                    }
-                    3 -> {
-                        count = mapCity.getValue(key.city).second + 1
-                        mapCity[key.city] = Pair(3, count)
-                    }
-                    4 -> {
-                        count = mapCity.getValue(key.city).second + 1
-                        mapCity[key.city] = Pair(4, count)
-                    }
-                    5 -> {
-                        count = mapCity.getValue(key.city).second + 1
-                        mapCity[key.city] = Pair(5, count)
-                    }
-                }
-            }
-        }
+        clear()
     }
 
+    private fun clear(){
+        hashMap.clear()
+        cities.clear()
+    }
 }
 
 
